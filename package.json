@@ -3,12 +3,13 @@
 	"version": "1.0.0",
 	"description": "Dockerized environment with a database, a back-end, and a front-end application.",
 	"scripts": {
-	  "build:back": "docker-compose build nestjs-app",
-	  "build:front": "docker-compose build nextjs-app",
-	  "start:db": "docker-compose up postgres-db",
-	  "start:back": "docker-compose up nestjs-app --renew-anon-volumes",
-	  "start:front": "docker-compose up nextjs-app --renew-anon-volumes",
-	  "clean": "docker-compose down -v"
+	  "build:back": "docker compose build nestjs-app",
+	  "build:front": "docker compose build nextjs-app",
+	  "start:dev": "docker compose up -d",
+	  "start:db": "docker compose up -d postgres-db",
+	  "start:back": "docker compose up -d nestjs-app --renew-anon-volumes",
+	  "start:front": "docker compose up -d nextjs-app --renew-anon-volumes",
+	  "clean": "docker compose down -v"
 	},
 	"author": "",
 	"license": "ISC"
