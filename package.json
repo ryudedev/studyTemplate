@@ -5,10 +5,12 @@
 	"scripts": {
 	  "build:back": "docker compose build nestjs-app",
 	  "build:front": "docker compose build nextjs-app",
-	  "start:dev": "docker compose up -d",
+	  "start:dev": "docker compose up -d --build",
 	  "start:db": "docker compose up -d postgres-db",
 	  "start:back": "docker compose up -d nestjs-app --renew-anon-volumes",
 	  "start:front": "docker compose up -d nextjs-app --renew-anon-volumes",
+	  "exec:back": "docker compose exec backend bash",
+	  "exec:front": "docker compose exec frontend bash",
 	  "clean": "docker compose down -v"
 	},
 	"author": "",
