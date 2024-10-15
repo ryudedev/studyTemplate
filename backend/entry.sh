@@ -8,5 +8,5 @@ exec "$@"
 npx prisma db push
 npx prisma generate
 npx prisma db seed
-(npx prisma studio&) 
+(npx prisma studio&)
 npm run start:dev

@@ -3,8 +3,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const client_1 = require("@prisma/client");
 const prisma = new client_1.PrismaClient();
 async function main() {
-    const user1 = await prisma.user.create({
-        data: {
+    await prisma.user.deleteMany();
+    const user1 = await prisma.user.upsert({
+        where: { login: 'wiwi' },
+        update: {},
+        create: {
             login: 'wiwi',
             username: 'wdebo',
             password: '123mickey',
@@ -13,8 +16,10 @@ async function main() {
             isOL: true,
         },
     });
-    const user2 = await prisma.user.create({
-        data: {
+    const user2 = await prisma.user.upsert({
+        where: { login: 'lilix' },
+        update: {},
+        create: {
             login: 'lilix',
             username: 'aceralin',
             password: 'crumble',
